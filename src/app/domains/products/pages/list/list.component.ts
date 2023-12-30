@@ -11,4 +11,13 @@ import { ProductComponent } from '../../components/product/product.component';
 })
 export class ListComponent {
 
+
+  printMessageFromChild(event: string) {
+    console.log("msg desde el padre: ")
+    console.log(event)
+  }
+
+
+
+
 }
