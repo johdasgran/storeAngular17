@@ -1,4 +1,5 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input, SimpleChanges, signal } from '@angular/core';
+import { Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-counter',
@@ -12,6 +13,10 @@ export class CounterComponent {
   @Input() duration: number = 0;
   @Input() message: string = '';
 
+  counter = signal(0);
+  counterRef!: number;
+
+  
 
   constructor() {
     // NO ASYNC
@@ -26,6 +31,17 @@ export class CounterComponent {
     console.log('ngOnChanges');
     console.log('_'.repeat(10));
     console.log(changes)
+
+    const changesDuration = changes['duration'];
+    
+    if(changes.hasOwnProperty('duration')) {
+      console.log("hehehe", changes.hasOwnProperty('duration'))
+    }
+
+    if(changesDuration && changesDuration.currentValue !== changesDuration.previousValue) {
+      console.log("El valor cambio", changesDuration.currentValue);
+    }
+
   }
 
   ngOnInit() {
@@ -36,6 +52,20 @@ export class CounterComponent {
     console.log('_'.repeat(10));
     console.log('duration state => ' + this.duration);
     console.log('message state => ' + this.message);
+
+
+    if(typeof window !== undefined) {
+      this.counterRef = window.setInterval(()=>{
+        this.counter.update(prevState=>prevState+1);
+        console.log(this.counter());
+      },1000)
+    }
+
+  
+      
+
+
+
   }
 
   ngAfterViewInit() {
@@ -48,8 +78,17 @@ export class CounterComponent {
   ngOnDestroy() {
     console.log('ngOnDestroy');
     console.log('_'.repeat(10));
+
+    if(typeof window !== undefined) {
+      clearInterval(this.counterRef);
+    }
+
   }
 
+
+  doSomething() {
+    console.log("He he cambio d¿uration heh");
+  }
 
 
 }
