@@ -2,12 +2,12 @@ import { Component, signal } from '@angular/core';
 import { ProductComponent } from '../../components/product/product.component';
 import { CounterComponent } from '../../../shared/components/counter/counter.component';
 import { Porduct } from '../../../shared/models/product.models';
-
+import { HeaderComponent } from '../../../shared/components/header/header.component';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [ProductComponent, CounterComponent],
+  imports: [ProductComponent, CounterComponent, HeaderComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
