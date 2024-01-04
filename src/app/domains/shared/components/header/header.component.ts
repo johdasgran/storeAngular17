@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+
+  hideSideMenu = signal(true);
+
+  toggleSideMenu() {
+    console.log(this.hideSideMenu());
+    this.hideSideMenu.update((prevState)=> !prevState);
+    console.log(this.hideSideMenu());
+
+  }
 
 }
