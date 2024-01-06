@@ -57,7 +57,7 @@
             />
           </svg>
           <div class="absolute bottom-2 left-8 h-4 w-4 rounded-xl bg-blue-700 flex place-content-center place-items-center text-xs font-medium text-white">
-            {{ cart.length }}
+            {{ cart().length }}
           </div>
         </button>
       </div>
@@ -91,7 +91,7 @@
   
     <ul role="list" class="divide-y divide-gray-100">
 
-      @for (product of cart; track $index) {
+      @for (product of cart(); track $index) {
   
         <li class="flex justify-between gap-x-6 py-5">
           <div class="flex min-w-0 gap-x-4">
