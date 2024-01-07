@@ -3,7 +3,13 @@ export interface Product {
     title: string,
     price: number,
     description: string,
-    category: any,
+    category: {
+        id: number,
+        title: string,
+        image: string,
+        creationAt: string,
+        updatedAt: string
+    },
     images: string[],
     creationAt: string
 }
