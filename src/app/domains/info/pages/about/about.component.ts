@@ -3,10 +3,12 @@ import { CounterComponent } from '../../../shared/components/counter/counter.com
 
 import { WaveAudioComponent } from '../../components/wave-audio/wave-audio.component';
 
+import { HighlinghtDirective } from '@shared/directives/highlinght.directive';
+
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CounterComponent, WaveAudioComponent],
+  imports: [CounterComponent, WaveAudioComponent, HighlinghtDirective],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
