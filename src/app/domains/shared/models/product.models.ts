@@ -5,5 +5,5 @@ export interface Product {
     description: string,
     category: any,
     images: string[],
-    date?: string
+    creationAt: string
 }

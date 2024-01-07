@@ -1,11 +1,12 @@
 import { Component, Input, SimpleChanges, inject, signal } from '@angular/core';
 import { Product } from '../../models/product.models';
 import { CartService } from '../../services/cart.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
