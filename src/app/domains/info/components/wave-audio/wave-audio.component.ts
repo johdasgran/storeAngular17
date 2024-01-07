@@ -20,12 +20,17 @@ export class WaveAudioComponent {
     this.ws =  WaveSurfer.create({
       url: this.audioUrl,
       container: this.container.nativeElement,
-      waveColor: '#328ff0',
-      progressColor: '#1872d0',
+      waveColor: '#ddd',
+      progressColor: '#328ff0',
+      barWidth: 4,
+      barGap: 3,
+      height: 90,
+      barRadius: 4,
     })
     this.ws.on('play', ()=> this.isPlaying.set(true))
     this.ws.on('pause', ()=> this.isPlaying.set(false))
   }
+
 
   toggleAudio() {
     this.ws.playPause();
