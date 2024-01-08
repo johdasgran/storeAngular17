@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
-export class ListComponent {
+export default class ListComponent {
   private cartService = inject(CartService);
   private productService = inject(ProductService);
   private categoriesService = inject(CategoriesService);

@@ -11,7 +11,7 @@ import { CartService } from '@shared/services/cart.service';
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss'
 })
-export class ProductDetailsComponent {
+export default class ProductDetailsComponent {
 
   private productService = inject(ProductService);
   private cartService = inject(CartService)
