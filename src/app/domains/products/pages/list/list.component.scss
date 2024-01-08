@@ -1,5 +1,30 @@
 .container__products {
     max-width: 1300px;
     margin: 0 auto;
+    padding: 20px 0;
+}
+
+.aside_products {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     padding: 20px;
+    min-width: 200px;
+    max-width: 200px;
+    width: 100%;
+    max-height: 440px;
+    position: sticky;
+    border-radius: 8px;
+    border: 2px solid rgb(247, 247, 247);
+    top: 40px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 12px 8px rgb(248 248 248);
+}
+
+.aside_products h4 {
+    font-weight: 700;
+}
+
+.aside_products ul {
+    margin: 0;
 }
